@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Bandhan</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="shortcut icon" href="/favicon_io/android-chrome-192x192.png" type="image/x-icon" />
+
+	<!-- Swiper link -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+	<!-- Font Awesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Css link -->
+	<!-- <link rel="stylesheet" href="/static/style3.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static',filename = '/style3.css')}}">
+
+	<style>
+		header .navbar .active1,
+		header .navbar a:hover {
+			background-color: var(--green);
+			color: #fff;
+		}
+
+		header .navbar .active2 {
+			background-color: var(--green);
+			color: #fff;
+		}
+
+		header .navbar .active4 {
+			background-color: var(--green);
+			color: #fff;
+		}
+
+		header .navbar .active7 {
+			background-color: var(--green);
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<a href="#" class="logo"><i class="fas fa-utensils"></i>Bandhan</a>
+
+		<nav class="navbar">
+			<a href="/templates/index.html" class="active1" id="home1">home</a>
+			<a href="/templates/index.html" class="active2" id="dish1">dishes</a>
+			<a href="/menu" class="active4" id="menu1">menu</a>
+			<a href="/logout" class="active7" id="log1">logout</a>
+		</nav>
+
+		<div class="icons">
+			<i class="fas fa-bars" id="menu-bar"></i>
+			<i class="fas fa-search" id="search-icon"></i>
+			<a href="#" class="fas fa-heart"></a>
+			<a href="#" class="fas fa-shopping-cart"></a>
+			<i class="fas fa-user-alt" id="usericon"></i>
+		</div>
+	</header>
+
+	<form action="" id="search-form">
+		<input type="search" placeholder="search here..." name="" id="search-box" />
+		<label for="search-box" class="fas fa-search"></label>
+		<i class="fas fa-times" id="close"></i>
+	</form>
+
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+		<div class="alert alert-success" role="alert" style="margin-top: 9rem;margin-left: 1rem;margin-right: 1rem;font-size: 3rem;">
+			{{ message }}
+		</div>
+		{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+	<section id="home" class="home">
+		<div class="swiper mySwiper home-slider">
+			<div class="swiper-wrapper wrapper">
+				<div class="swiper-slide slide">
+					<div class="content">
+						<h3 style="line-height: 70px;">Bandhan restaurant</h3>
+						<span>Garden restaurant</span>
+						<p>
+							Veg Indian, Continental & Chinese fare in a casual,
+							family-friendly space with outdoor seating.
+						</p>
+					</div>
+
+					<div class="image">
+						<img src="https://lh3.googleusercontent.com/p/AF1QipMr3yySwpYGX9id8l98OvrzmB-O76K_FCBxUyDR=s1360-w1360-h1020"
+							alt="Bandhan" />
+					</div>
+					<!-- <span>our special dish</span>
+              <h3>spicy noodles</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                natus voluptatibus exercitationem.
+              </p>
+              <a href="#" class="btn">order now</a>
+            </div>
+            <div class="image">
+            <img src="home-img1.jpg" alt="noodles" /> -->
+				</div>
+				<div class="swiper-slide slide">
+					<div class="content">
+						<span style="font-size: 5rem">our specialities</span>
+						<ul style="font-size: 2.5rem; margin-left: 25px">
+							<li>Punjabi</li>
+							<li>Chinese</li>
+							<li>Mexican-thai</li>
+							<li>Kathiyawadi</li>
+							<li>Rajasthani</li>
+						</ul>
+						<a href="#" class="btn">order now</a>
+					</div>
+					<div class="image">
+						<img src="https://b.zmtcdn.com/data/pictures/9/18857339/309d38a7b3713221516cff57186e6213_featured_v2.jpg?output-format=webp"
+							alt="noodles" />
+					</div>
+				</div>
+				<div class="swiper-slide slide">
+					<div class="content">
+						<h3>Amenities</h3>
+						<p>
+							Garden Restaurant with outdoor sitting arrangement and tree
+							house dining. Which can provide soothing evening experience with
+							your loved ones. With a dining hall to spend quality lunch and
+							dinner.
+						</p>
+						<a href="#" class="btn">order now</a>
+					</div>
+					<div class="image">
+						<img src="https://media.weddingz.in/images/6e4e1a1342ba7f0a13b7c085dc517a87/bandhan-garden-restaurant-s-g-highway-ahmedabad.jpg"
+							alt="noodles" style="height: 50rem;transform: rotate(4deg);" />
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+	</section>
+
+	<section class="dishes" id="dishes">
+		<!-- <h3 class="sub-heading">our dishes</h3> -->
+		<h1 class="heading">our popular dishes</h1>
+
+		<div class="box-container">
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/e5kjghjaersde9gs37l3"
+					alt="dish2" />
+				<h3>Veg. Manchurian Dry</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹249</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/rj6poh71vgrmf81rsbgl"
+					alt="dish3" />
+				<h3>Paneer Chilli dry</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹306</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/gqv31zk2e7rsbi3yosbs"
+					alt="dish1" />
+				<h3>Veg Kolhapuri</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹269</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/irlgteivalcjvc0q6ukv"
+					alt="dish4" />
+				<h3>Paneer lababdar</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹305</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/etj2dlg3zx2cugblepyj"
+					alt="dish5" />
+				<h3>Palak Paneer</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹284</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/u7uddvimq2qy4tqhvr9o"
+					alt="dish6" />
+				<h3>Dal Fry</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹189</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/rihqdrfv5srfwyaamw1x"
+					alt="dish6" />
+				<h3>Butter naan</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹78</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+			<div class="box">
+				<a href="#" class="fas fa-heart"></a>
+				<a href="#" class="fas fa-eye"></a>
+				<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/gze15i9t1ffew3dkvjo4"
+					alt="dish6" />
+				<h3>Masala Khichdi</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</div>
+				<span>₹186</span>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- swiper js -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+	<!-- custom js file link -->
+	<script src="{{ url_for('static',filename = '/script.js')}}"></script>
+	<!-- <script src="/static/script.js"></script> -->
+</body>
+
+</html>

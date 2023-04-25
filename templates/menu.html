@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandhan</title>
+
+    <!-- Swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Font Awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Css link -->
+    <!-- <link rel="stylesheet" href="style3.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename = '/style3.css')}}">
+
+
+    <style>
+        header .navbar .active4,
+        header .navbar a:hover {
+            background-color: var(--green);
+            color: #fff;
+        }
+
+        td {
+            padding: .5rem;
+        }
+
+        table,
+        td,
+        tr {
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        #col1 {
+            width: 20%;
+        }
+
+        #col2 {
+            width: 70%;
+        }
+
+        h2 {
+            display: inline;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>Bandhan</a>
+
+        <nav class="navbar">
+            <a href="/templates/index.html" class="active1" id="home1">home</a>
+            <a href="/templates/index.html" class="active2" id="dish1">dishes</a>
+            <a href="/menu" class="active4" id="menu1">menu</a>
+            <a href="/logout" class="active7" id="log1">logout</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bar"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/order" class="fas fa-shopping-cart"></a>
+            <i class="fas fa-user-alt" id="usericon"></i>
+        </div>
+    </header>
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <section class="menu">
+        <h1>our menu</h1>
+        <div class="box-container">
+            {% for i in mydata %}
+            <form class="formm" action="/cart" method="POST">
+                <div class="box">
+                    <div class="image">
+                        <img id="images" src="{{i[1]}}" alt="">
+                        <a href="" class="fas fa-heart"></a>
+                    </div>
+                    <div class="content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3 class="fname">{{i[2]}}</h3>
+                        <input type="text" name="foodid" value="{{i[0]}}" style="font-size: 1.7rem;display: none;">
+                        <p>{{i[3]}}</p>
+                        <button class="btn" style="display: inline-block;">add to cart</button><span>₹{{i[4]}}</span>
+                    </div>
+                </div>
+            </form>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link -->
+    <!-- <script src="script.js"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename = '/script.js')}}">
+
+</body>
+
+</html>

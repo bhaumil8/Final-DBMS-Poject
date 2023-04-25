@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Login</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = '/style3.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="style3.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = '/style1.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="style1.css"> -->
+    
+    <!-- Swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Font Awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- <header>
+
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>Bandhan</a>
+
+        <nav class="navbar">
+            <a href="/index">home</a>
+            <a href="/index">dishes</a>
+            <a href="#about">about</a>
+            <a href="/menu">menu</a>
+            <a href="#review">review</a>
+            <a href="#order">order</a>
+            <a href="/login" class="active7">login</a>
+            <a href="#">Employees</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bar"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <i class="fas fa-user-alt" id="usericon"></i>
+        </div>
+    </header> -->
+
+	<div class="container">
+		<div class="img">
+			<img class="resimg" src="{{'https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80'}}" style="border-radius: 0%;">
+			<!-- <img class="resimg" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80"> -->
+		</div>
+		<div class="login-box" style="margin-top: -5rem;">
+			<h1>Sign Up</h1>
+			<form action="/" method="post">
+				<label for="email">email</label>
+				<input type="text" name="email" placeholder="Enter email">
+                <label for="name">name</label>
+                <input type="text" name="name" placeholder="Enter your phone no">
+				<label for="add">address</label>
+				<input type="text" name="add" placeholder="Enter address">
+                <button type="submit" name="login" value="Login"> SUBMIT</button>
+				<!-- <input type="submit" name="login" value="Login"> -->
+			</form>
+			<div class="links">
+				<a href="#" class="forgotpassword">Forgot Password?</a>
+				<a href="#" class="newaccount">Create an Account</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+</div>

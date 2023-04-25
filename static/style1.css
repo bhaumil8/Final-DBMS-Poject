@@ -1,0 +1,353 @@
+/* body {
+	background: #f8f8f8;
+}
+
+.login-box {
+	width: 400px;
+	margin: 100px auto;
+	background: #fff;
+	padding: 40px 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #e6e6e6;
+	text-align: center;
+}
+
+h1 {
+	font-size: 32px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+label {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #777;
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	background: #f2f2f2;
+	font-size: 16px;
+	color: #555;
+	width: 100%;
+}
+
+input[type="submit"] {
+	background: #27ae60;
+	color: #fff;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background: #2fd876;
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	color: #999;
+}
+
+.links a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #999;
+}
+
+.links a:hover {
+	color: #555;
+} */
+
+/* 
+body {
+	background: #f8f8f8;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.img {
+	flex: 0 0 40%;
+	height: 80%;
+	background: url('restaurant.jpeg') no-repeat center center;
+	background-size: cover;
+}
+
+.login-box {
+	flex: 0 0 40%;
+	padding: 60px 50px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #e6e6e6;
+}
+
+h1 {
+	font-size: 32px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+label {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #777;
+	display: block;
+	text-align: left;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	background: #f2f2f2;
+	font-size: 16px;
+	color: #555;
+}
+
+input[type="submit"] {
+	background: #27ae60;
+	color: #fff;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background: #33e97e;
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	color: #999;
+}
+
+.links a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #999;
+}
+
+.links a:hover {
+	color: #555;
+}
+ */
+
+
+ /* body {
+	background: #f8f8f8;
+}
+
+.login-box {
+	width: 400px;
+	margin: 100px auto;
+	background: #fff;
+	padding: 40px 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #e6e6e6;
+	text-align: center;
+}
+
+h1 {
+	font-size: 32px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+label {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #777;
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	background: #f2f2f2;
+	font-size: 16px;
+	color: #555;
+	width: 100%;
+}
+
+input[type="submit"] {
+	background: #27ae60;
+	color: #fff;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background: #2fd876;
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	color: #999;
+}
+
+.links a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #999;
+}
+
+.links a:hover {
+	color: #555;
+} */
+
+
+:root {
+	--green: #27ae60;
+	--black: #192a56;
+	--light-color: #666;
+	--box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+body {
+	background: #f8f8f8;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.img {
+	flex: 0 0 40%;
+	height: 80%;
+	background: url('restaurant.jpeg') no-repeat center center;
+	background-size: cover;
+}
+
+.login-box {
+	flex: 0 0 40%;
+	padding: 60px 50px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #e6e6e6;
+}
+
+h1 {
+	font-size: 32px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+label {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #777;
+	display: block;
+	text-align: left;
+}
+
+input[type="text"], input[type="password"], button[type="submit"] {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	background: #f2f2f2;
+	font-size: 16px;
+	color: #555;
+}
+
+button[type="submit"] {
+	background: var(--black);
+	color: #fff;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	letter-spacing: 0.2rem;
+	background: var(--green);
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	color: #999;
+}
+
+.links a {
+	margin-right: 10px;
+	text-decoration: none;
+	color: #999;
+}
+
+.links a:hover {
+	color: var(--black);
+}
+
+.links .forgotpassword 
+{
+	color: blue;
+}
+
+.links .newaccount 
+{
+	color: blue;
+}
+
+

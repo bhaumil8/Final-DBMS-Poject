@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Bandhan</title>
+	<link rel="shortcut icon" href="/favicon_io/android-chrome-192x192.png" type="image/x-icon" />
+
+	<!-- Swiper link -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+	<!-- Font Awesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Css link -->
+	<!-- <link rel="stylesheet" href="style3.css" /> -->
+	<link rel="stylesheet" href="{{ url_for('static',filename = '/style3.css')}}">
+
+	<style>
+		:root {
+			--green: #27ae60;
+			--black: #192a56;
+			--light-color: #666;
+			--box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2);
+		}
+
+		header .navbar a:hover {
+			background-color: var(--green);
+			color: #fff;
+		}
+
+		.ordercontainer {
+			margin-top: 4rem;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: 60%;
+		}
+
+		.ordercontainer .root .sidebar {
+			width: 100%;
+			background: #eee;
+			border-radius: 0.5rem;
+			padding: 1rem;
+			justify-content: center;
+		}
+
+		.head {
+			margin-top: 9rem;
+			background: var(--green);
+			padding: 1rem;
+			border-radius: 0.5rem;
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
+			font-size: 1.5rem;
+			color: #eee;
+		}
+
+		.foot {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+			padding: 10px 0;
+			border-top: 1px solid #333;
+		}
+
+		td {
+			border: 1px solid black;
+			border-radius: 0.5rem;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		.col1 {
+			width: 10%;
+		}
+
+		.col2 {
+			width: 80%;
+		}
+
+		.pimg {
+			height: 12rem;
+			width: 12rem;
+			border-radius: 0%;
+		}
+
+		.payment-container {
+			display: flex;
+			align-items: center;
+		}
+
+		.payment-container input[type="radio"] {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<a href="#" class="logo"><i class="fas fa-utensils"></i>Bandhan</a>
+
+		<nav class="navbar">
+			<a href="/templates/index.html" class="active1" id="home1">home</a>
+			<a href="/templates/index.html" class="active2" id="dish1">dishes</a>
+			<a href="/menu" class="active4" id="menu1">menu</a>
+			<a href="/logout" class="active7" id="log1">login</a>
+		</nav>
+
+		<div class="icons">
+			<i class="fas fa-bars" id="menu-bar"></i>
+			<i class="fas fa-search" id="search-icon"></i>
+			<a href="/preorder" class="fas fa-heart"></a>
+			<a href="#" class="fas fa-shopping-cart"></a>
+			<i class="fas fa-user-alt" id="usericon"></i>
+		</div>
+	</header>
+
+	<form action="" id="search-form">
+		<input type="search" placeholder="search here..." name="" id="search-box" />
+		<label for="search-box" class="fas fa-search"></label>
+		<i class="fas fa-times" id="close"></i>
+	</form>
+
+	<div class="head">
+		<p>my cart</p>
+	</div>
+	<div class="payment"
+		style="float: right;background: #eee;width: 35%;margin-right: 2rem;margin-top: 4rem;height: 52rem;padding: 3rem;">
+		<h2 style="font-size: 2rem;background: #27ae60;border-radius: 0.5rem;padding-left: 2rem;padding-top: 1rem;padding-bottom: 1rem;color: #fff;">payment info.</h2>
+
+		<div class="method" style="margin-top: 4rem;align-items: center;">
+			<label for="paymethod" style="font-size: 1.3rem;">payment method</label>
+			<br>
+			<br>
+			<div class="payment-container">
+				<input type="radio" name="pay" id="credit" checked>
+				<i class="fa-regular fa-credit-card" style="font-size: 1.5rem;"></i>
+				<span style="margin-left: 1rem;font-size: 1.5rem;">credit card</span>
+			</div>
+			<br>
+			<div class="payment-container">
+				<input type="radio" name="pay" id="paytm">
+				<i class="fa-solid fa-money-bill" style="font-size: 1.5rem;"></i>
+				<span style="margin-left: 1rem;font-size: 1.5rem;">Upi / Paytm</span>
+			</div>
+			<div class="info" id="info" style="margin-top: 3rem;">
+	
+			</div>
+		</div>
+
+
+
+	</div>
+	<div class="ordercontainer" style="display: inline-block;">
+		<div class="root">
+			<div class="sidebar">
+				{% for i in myorder %}
+				<div class="cartItem" >
+
+					<table>
+						<tr style="display: flex;gap: 7rem;">
+							<td class="col1" style="display: flex;">
+								<img src="{{i[1]}}" class="pimg" style="border-radius: 0.5rem;">
+							</td>
+							<td class="col2" style="display:flex;justify-content: space-between;background: #fff;height: 12rem;padding-top: 4.5rem;padding-left: 1rem;padding-right: 1rem;">
+								<h3 class="fname" style="font-size: large;width: 20rem;">{{i[2]}}</h3>
+
+								<br>
+								<form action="/dec" method="post" style="display:inline-block ;">
+									<input type="text" name="dec" value="{{i[0]}}" style="display: none;">
+									<button class="Ibutn" style="display: inline-block;width: 1.8rem;">-</button>
+								</form>
+								<span class="quantity"
+									style="margin-left: 1rem;margin-right: 1rem;font-size: 1.3rem;">{{i[5]}}</span>
+								<form action="/inc" method="post" style="display:inline-block;margin-bottom: 1rem;">
+									<input type="text" name="inc" value="{{i[0]}}" style="display: none;">
+									<button class="Dbutn" style="display: inline-block;width: 1.8rem;">+</button>
+								</form>
+
+								<h3 class="fprice" style="font-size: 1.5rem;width: 10rem;">Price : {{i[7]}}</h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<br><br>
+				{% endfor %}
+
+				<!-- <div class="foot">
+					<h2>Total</h2>
+					<h3 class="total">₹ {{ sum }}</h3>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- <button style="margin-left: 10rem;">CheckOut</button> -->
+
+	<!-- swiper js -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+	<!-- custom js file link -->
+	<!-- <script src="script.js"></script> -->
+	<link rel="stylesheet" href="{{ url_for('static',filename = '/script.js')}}">
+	<script>
+
+		var content1 = `
+		<form action='/checkout' method = 'post'>
+			<h3>Card Holder name</h3>
+			<input type="text">
+			<br>
+			<br>
+			<h3>Card Number</h3>
+			<input type="number">
+			<br>
+			<br>
+			<h3>
+				expiration date
+			</h3>
+			<input type="date">
+			<br>
+			<div class="foot">
+					<h2>Total : &nbsp</h2>
+					<h2 class="total"> ₹{{ sum }}</h2>
+				</div>
+			<br>
+			<button class='btn' style="margin-left: 17rem;">CheckOut</button>
+			</form>
+		`;
+
+		content2 = `
+		<form action='/checkout' method = 'post'>
+			<h3>Phone number / Upi id</h3>
+			<input type="text">
+			<br>
+			<div class="foot">
+					<h2>Total : &nbsp</h2>
+					<h2 class="total">₹{{ sum }}</h2>
+				</div>
+			<br>
+			<button class='btn' style="margin-left: 17rem;">CheckOut</button>
+			</form>
+		`;
+		
+		if (document.getElementById('credit').checked) {
+			document.getElementById('info').innerHTML = content1;
+		}
+		document.getElementById('credit').addEventListener('change', function () {
+			if (document.getElementById('credit').checked) {
+				document.getElementById('info').innerHTML = content1;
+			}
+		});	
+		document.getElementById('paytm').addEventListener('change', function () {
+			if (document.getElementById('paytm').checked) {
+				document.getElementById('info').innerHTML = content2;
+			} 
+		});	
+	</script>
+
+</body>
+
+</html>
